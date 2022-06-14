@@ -13,8 +13,6 @@ func BuildServer() {
 	_ = &interfaces.FieldRecordController{
 		Interactor: &usecases.FieldRecordService{
 			RecordRepository: &interfaces.PgRepo{},
-			// Option 1:
-			RecordSearchRepo: &interfaces.EsRepo{},
 		},
 	}
 }
