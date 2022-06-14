@@ -9,7 +9,7 @@ type FieldRecordController struct {
 type FieldRecordInteractor interface {
 	FindAll() []domain.FieldRecord
 	FindById(id int) domain.FieldRecord
-	// Option 1
+	// EsFindAll Option 1-0: Create a separate FindAll function
 	EsFindAll() []domain.FieldRecord
 }
 
@@ -40,6 +40,7 @@ func (c *FieldRecordController) FindById(id int) domain.FieldRecord {
 	return c.Interactor.FindById(id)
 }
 
+// EsFindAll Option 1-0: Create a separate FindAll function
 func (c *FieldRecordController) EsFindAll() []domain.FieldRecord {
 	return c.Interactor.FindAll()
 }

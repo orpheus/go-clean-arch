@@ -13,7 +13,9 @@ func BuildServer() {
 	_ = &interfaces.FieldRecordController{
 		Interactor: &usecases.FieldRecordService{
 			RecordRepository: &interfaces.PgRepo{},
-			// Option 1:
+			// Option 1-0: implement a full ES Repository
+			EsRecordRepository: &interfaces.EsRepo{},
+			// Option 2: Implement a Specialized ES Repository
 			RecordSearchRepo: &interfaces.EsRepo{},
 		},
 	}
